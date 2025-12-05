@@ -61,10 +61,10 @@ st.sidebar.title("⚙️ Settings")
 st.sidebar.info("Isi data pasien lalu klik **Predict Stroke Risk**")
 st.sidebar.markdown("---")
 st.sidebar.write("Developed by **Nikmah Azizah**")
+
 # ---------------------------------------------------------
 # KONTEN DINAMIS
 # ---------------------------------------------------------
-st.markdown("<div class='content-card'>", unsafe_allow_html=True)
 
 # 1. Penjelasan Stroke
 if menu == "🧠 Penjelasan Stroke":
