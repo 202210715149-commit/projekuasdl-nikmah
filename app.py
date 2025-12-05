@@ -83,7 +83,6 @@ st.sidebar.write("Developed by **Nikmah Azizah**")
 # ---------------------------------------------------------
 # KONTEN DINAMIS
 # ---------------------------------------------------------
-st.markdown("<div class='main-container'>", unsafe_allow_html=True)
 
 # 1. Penjelasan Stroke
 if menu == "🧠 Penjelasan Stroke":
