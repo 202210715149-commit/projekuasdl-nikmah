@@ -51,7 +51,8 @@ menu = st.sidebar.radio(
         "📌 Jenis Stroke",
         "🔥 Faktor Risiko Tinggi",
         "🚨 Gejala Umum (FAST)",
-        "🛡 Pencegahan Stroke"
+        "🛡 Pencegahan Stroke",
+        "🧠 Stroke Risk Predictio"
     ],
     label_visibility="collapsed"
 )
