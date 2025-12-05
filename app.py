@@ -10,6 +10,15 @@ import matplotlib.pyplot as plt
 logreg = pickle.load(open("logistic_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
+# ---------------------------------------------------------
+# PAGE CONFIG
+# ---------------------------------------------------------
+st.set_page_config(
+    page_title="Stroke Risk Prediction",
+    page_icon="🧠",
+    layout="centered"
+)
+
 # --- CSS untuk Premium UI ---
 st.markdown("""
 <style>
@@ -42,7 +51,7 @@ menu = st.sidebar.radio(
         "🔥 Faktor Risiko Tinggi",
         "🚨 Gejala Umum (FAST)",
         "🛡 Pencegahan Stroke",
-        "🧠 Stroke Risk Predictio"
+        "🧠 Stroke Risk Prediction"
     ],
     label_visibility="collapsed"
 )
@@ -132,6 +141,11 @@ elif menu == "🛡 Pencegahan Stroke":
 
     Pencegahan jauh lebih mudah daripada mengobati.
     """)
+# 6. Stroke Risk Prediction
+st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
+
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
 
@@ -181,14 +195,6 @@ body {
 
 </style>
 """, unsafe_allow_html=True)
-
-# ---------------------------------------------------------
-# HEADER
-# ---------------------------------------------------------
-st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
-
-st.markdown("<div class='card'>", unsafe_allow_html=True)
 
 # ================================
 # SIDEBAR MENU
