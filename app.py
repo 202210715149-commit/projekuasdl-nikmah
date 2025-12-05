@@ -9,13 +9,10 @@ logreg = pickle.load(open("logistic_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
 # ---------------------------------------------------------
-# PAGE CONFIG
+# STREAMLIT UI
 # ---------------------------------------------------------
-st.set_page_config(
-    page_title="Stroke Risk Prediction",
-    page_icon="🧠",
-    layout="centered"
-)
+st.title("🧠 Stroke Risk Prediction")
+st.write("Masukkan data pasien untuk memprediksi risiko stroke.")
 
 # ---------------------------------------------------------
 # FORM INPUT
