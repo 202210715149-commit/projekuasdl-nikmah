@@ -131,7 +131,6 @@ st.sidebar.markdown("<div class='sidebar-title'>📘 Informasi Stroke</div>", un
 menu = st.sidebar.radio(
     "Pilih topik penjelasan:",
     [
-        "🏠 Home"
         "🧠 Penjelasan Stroke",
         "📌 Jenis Stroke",
         "🔥 Faktor Risiko Tinggi",
