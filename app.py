@@ -38,7 +38,6 @@ st.markdown("""
     opacity: 0.8;
     margin-top: -10px;
 }
-st.image("https://cdn.pixabay.com/photo/2018/02/09/10/09/brain-3141249_960_720.jpg", width=350)
 
 /* GLASS CARD */
 .feature-card {
@@ -155,8 +154,7 @@ st.sidebar.write("Developed by **Nikmah Azizah**")
 if menu == "🧠 Penjelasan Stroke":
     st.markdown("""
     ## 🧠 Apa Itu Stroke?
-    Stroke adalah kondisi ketika aliran darah ke otak terhenti, sehingga sel otak mulai mati dalam hitungan menit.  
-    Jika tidak segera ditangani, stroke dapat menyebabkan **kelumpuhan**, **gangguan bicara**, **kehilangan memori**, hingga **kematian**.
+    kondisi darurat medis yang terjadi ketika pasokan darah ke otak terganggu, menyebabkan kematian sel otak karena kekurangan oksigen dan nutrisi. Kondisi ini dapat disebabkan oleh penyumbatan pembuluh darah (stroke iskemik) atau pecahnya pembuluh darah (stroke hemoragik). Gejala stroke dapat bervariasi, seperti kelemahan pada satu sisi tubuh, gangguan bicara, dan sakit kepala hebat.
 
     Stroke terjadi karena:
     - Penyumbatan pembuluh darah (ischemic)
