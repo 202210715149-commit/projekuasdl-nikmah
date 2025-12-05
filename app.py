@@ -44,6 +44,16 @@ st.markdown("""
     font-size:13px;
     color:#666;
 }
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+    background: rgba(255,255,255,0.7);
+    padding: 35px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
 </style>
 """, unsafe_allow_html=True)
 
