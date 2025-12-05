@@ -66,141 +66,93 @@ st.markdown("---")
 st.caption("Developed by **Nikmah Azizah**")
 
 
-# ======================================
-# HALAMAN DINAMIS BERDASARKAN MENU
-# ======================================
-st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;opacity:0.7;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
+# ================================
+# KONTEN UTAMA (BERUBAH SESUAI MENU)
+# ================================
+st.markdown("<div class='content-card'>", unsafe_allow_html=True)
 
-st.write("")
-st.write("")
+# 1. Penjelasan Stroke
+if menu == "🧠 Penjelasan Stroke":
+    st.markdown("""
+    ## 🧠 Apa Itu Stroke?
+    Stroke adalah kondisi ketika aliran darah ke otak terhenti, sehingga sel otak mulai mati dalam hitungan menit.  
+    Jika tidak segera ditangani, stroke dapat menyebabkan **kelumpuhan**, **gangguan bicara**, **kehilangan memori**, hingga **kematian**.
 
-
-# -----------------------------------------------------
-# 1. PENJELASAN STROKE
-# -----------------------------------------------------
-if menu == "Penjelasan Stroke":
-    st.subheader("🧠 Apa Itu Stroke?")
-    st.write("""
-Stroke adalah kondisi ketika aliran darah ke otak terhenti sehingga sel-sel otak mulai mati dalam hitungan menit.
-Penyebabnya bisa berupa penyumbatan pembuluh darah atau pecahnya pembuluh darah di otak.
+    Stroke terjadi karena:
+    - Penyumbatan pembuluh darah (ischemic)
+    - Pecahnya pembuluh darah (hemorrhagic)
     """)
 
+# 2. Jenis Stroke
+elif menu == "📌 Jenis Stroke":
+    st.markdown("""
+    ## 📌 Jenis-Jenis Stroke
 
-# -----------------------------------------------------
-# 2. JENIS STROKE
-# -----------------------------------------------------
-elif menu == "Jenis Stroke":
-    st.subheader("📌 Jenis Stroke")
-    st.write("""
-### 1. Ischemic Stroke  
-Terjadi karena penyumbatan pembuluh darah otak.
+    ### **1. Ischemic Stroke — 85% kasus**
+    Terjadi karena pembuluh darah tersumbat oleh gumpalan darah/plak.
 
-### 2. Hemorrhagic Stroke  
-Terjadi karena pecahnya pembuluh darah otak.
+    ### **2. Hemorrhagic Stroke**
+    Terjadi karena pecahnya pembuluh darah sehingga terjadi pendarahan di otak.
 
-### 3. TIA (Transient Ischemic Attack)  
-“Mini Stroke” yang menjadi tanda bahaya stroke lebih besar.
+    ### **3. TIA (Transient Ischemic Attack) — Mini Stroke**
+    Gangguan sementara yang sering menjadi tanda bahaya stroke yang lebih besar.
     """)
 
+# 3. Faktor Risiko
+elif menu == "🔥 Faktor Risiko Tinggi":
+    st.markdown("""
+    ## 🔥 Faktor Risiko Tinggi Stroke
+    Faktor yang paling meningkatkan risiko stroke antara lain:
+    - Tekanan darah tinggi (Hypertension)
+    - Kolesterol tinggi
+    - Penyakit jantung
+    - Diabetes
+    - Merokok
+    - Obesitas atau BMI tinggi
+    - Kurang aktivitas fisik
+    - Riwayat keluarga stroke
+    - Usia lanjut
 
-# -----------------------------------------------------
-# 3. FAKTOR RISIKO
-# -----------------------------------------------------
-elif menu == "Faktor Risiko Tinggi":
-    st.subheader("🔥 Faktor Risiko Tinggi")
-    st.write("""
-- Hipertensi  
-- Penyakit jantung  
-- Gula darah tinggi  
-- BMI tinggi  
-- Merokok  
-- Usia lanjut  
-- Riwayat keluarga stroke  
+    Semakin banyak faktor risiko, semakin besar kemungkinan stroke terjadi.
     """)
 
+# 4. Gejala FAST
+elif menu == "🚨 Gejala Umum (FAST)":
+    st.markdown("""
+    ## 🚨 Gejala Umum Stroke — Metode FAST
 
-# -----------------------------------------------------
-# 4. GEJALA FAST
-# -----------------------------------------------------
-elif menu == "Gejala FAST":
-    st.subheader("🚨 Gejala Umum Stroke (FAST)")
-    st.write("""
-**F — Face:** Wajah menurun pada satu sisi  
-**A — Arm:** Lengan lemah atau mati rasa  
-**S — Speech:** Sulit bicara  
-**T — Time:** Segera cari bantuan medis  
+    ### **F — Face Drooping**
+    Salah satu sisi wajah turun.
+
+    ### **A — Arm Weakness**
+    Lengan sulit diangkat atau terasa lemah.
+
+    ### **S — Speech Difficulty**
+    Bicara pelo atau tidak jelas.
+
+    ### **T — Time to Call Emergency**
+    Segera cari pertolongan medis!  
+    Waktu = otak. Semakin cepat ditangani, semakin besar peluang selamat.
     """)
 
+# 5. Pencegahan Stroke
+elif menu == "🛡 Pencegahan Stroke":
+    st.markdown("""
+    ## 🛡 Pencegahan Stroke
 
-# -----------------------------------------------------
-# 5. PENCEGAHAN
-# -----------------------------------------------------
-elif menu == "Pencegahan Stroke":
-    st.subheader("🛡 Pencegahan Stroke")
-    st.write("""
-- Menurunkan tekanan darah  
-- Mengontrol kolesterol  
-- Menghindari rokok  
-- Menjaga berat badan sehat  
-- Olahraga teratur  
-- Pola makan sehat  
+    - Jaga tekanan darah normal  
+    - Berhenti merokok  
+    - Kurangi gula & garam  
+    - Olahraga rutin  
+    - Jaga berat badan ideal  
+    - Konsumsi makanan sehat  
+    - Kontrol kolesterol & gula darah  
+    - Periksa kesehatan secara berkala  
+
+    Pencegahan jauh lebih mudah daripada mengobati.
     """)
 
-
-# -----------------------------------------------------
-# 6. FORM PREDIKSI (INI YANG KAMU MAU)
-# -----------------------------------------------------
-elif menu == "Stroke Risk Prediction":
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        age = st.number_input("🥚 Age", 1, 120)
-        hypertension = st.selectbox("❤️ Hypertension", [0, 1])
-        heart = st.selectbox("💔 Heart Disease", [0, 1])
-        bmi = st.number_input("🐝 BMI", 10.0, 60.0)
-
-    with col2:
-        glucose = st.number_input("🩸 Average Glucose Level", 40.0, 300.0)
-        gender = st.selectbox("🚻 Gender", ["Female", "Male", "Other"])
-        married = st.selectbox("💍 Ever Married", ["No", "Yes"])
-        residence = st.selectbox("🏠 Residence Type", ["Urban", "Rural"])
-        work = st.selectbox("👔 Work Type", ["Private", "Self-employed", "Govt_job", "Children", "Never_worked"])
-        smoke = st.selectbox("🚬 Smoking Status", ["never smoked", "formerly smoked", "smokes"])
-
-    # ENCODING
-    gender_m = 1 if gender == "Male" else 0
-    gender_o = 1 if gender == "Other" else 0
-    married_yes = 1 if married == "Yes" else 0
-    urban = 1 if residence == "Urban" else 0
-
-    work_never = 1 if work == "Never_worked" else 0
-    work_private = 1 if work == "Private" else 0
-    work_self = 1 if work == "Self-employed" else 0
-    work_child = 1 if work == "Children" else 0
-
-    sm_former = 1 if smoke == "formerly smoked" else 0
-    sm_never = 1 if smoke == "never smoked" else 0
-    sm_smokes = 1 if smoke == "smokes" else 0
-
-    X = np.array([[
-        age, hypertension, heart, glucose, bmi,
-        gender_m, gender_o, married_yes,
-        work_never, work_private, work_self, work_child,
-        urban, sm_former, sm_never, sm_smokes
-    ]])
-
-    X_scaled = scaler.transform(X)
-
-    if st.button("🚀 Predict Stroke Risk"):
-        pred = logreg.predict(X_scaled)[0]
-        prob = logreg.predict_proba(X_scaled)[0][1]
-
-        if pred == 1:
-            st.error(f"⚠️ Risiko Stroke Tinggi (Probabilitas: {prob:.2f})")
-        else:
-            st.success(f"🟢 Risiko Stroke Rendah (Probabilitas: {prob:.2f})")
+st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ================================
