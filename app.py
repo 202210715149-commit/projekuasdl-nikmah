@@ -74,24 +74,34 @@ st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediks
 
 st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-# ---------------------------------------------------------
-# 2-COLUMN INPUT LAYOUT
-# ---------------------------------------------------------
+# ================================
+# SIDEBAR MENU
+# ================================
+st.sidebar.title("⚙️ Settings")
+st.sidebar.info("Isi data pasien lalu klik **Predict Stroke Risk**")
+st.sidebar.markdown("---")
+st.sidebar.write("Developed by **Nikmah Azizah**")
+
+# ================================
+# FORM - PREMIUM GLASS CARD
+# ================================
+st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
+
 col1, col2 = st.columns(2)
 
 with col1:
-    age = st.number_input("Age", min_value=1, max_value=120, value=25)
-    hypertension = st.selectbox("Hypertension", [0, 1])
-    heart_disease = st.selectbox("Heart Disease", [0, 1])
-    bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=25.0)
+    age = st.number_input("🧓 Age", 1, 120, 25)
+    hypertension = st.selectbox("💓 Hypertension", [0, 1])
+    heart_disease = st.selectbox("❤️ Heart Disease", [0, 1])
+    bmi = st.number_input("⚖️ BMI", 10.0, 60.0, 25.0)
 
 with col2:
-    avg_glucose_level = st.number_input("Average Glucose Level", min_value=40.0, max_value=300.0, value=100.0)
-    gender = st.selectbox("Gender", ["Female", "Male", "Other"])
-    ever_married = st.selectbox("Ever Married", ["No", "Yes"])
-    Residence_type = st.selectbox("Residence Type", ["Urban", "Rural"])
-    work_type = st.selectbox("Work Type", ["Private", "Self-employed", "Govt_job", "Children", "Never_worked"])
-    smoking_status = st.selectbox("Smoking Status", ["never smoked", "formerly smoked", "smokes"])
+    avg_glucose_level = st.number_input("🩸 Average Glucose Level", 40.0, 300.0, 100.0)
+    gender = st.selectbox("🚻 Gender", ["Female", "Male", "Other"])
+    ever_married = st.selectbox("💍 Ever Married", ["No", "Yes"])
+    Residence_type = st.selectbox("🏠 Residence Type", ["Urban", "Rural"])
+    work_type = st.selectbox("🧑‍💼 Work Type", ["Private", "Self-employed", "Govt_job", "Children", "Never_worked"])
+    smoking_status = st.selectbox("🚬 Smoking Status", ["never smoked", "formerly smoked", "smokes"])
 
 st.markdown("</div>", unsafe_allow_html=True)
 
@@ -136,31 +146,46 @@ input_data = np.array([[
 
 input_scaled = scaler.transform(input_data)
 
-# ---------------------------------------------------------
-# PREDICT BUTTON
-# ---------------------------------------------------------
-st.write("")
-predict_btn = st.button("🔍 Predict Stroke Risk")
+# ================================
+# PREDICTION BUTTON + LOADING
+# ================================
+predict = st.button("🔍 Predict Stroke Risk")
 
-# ---------------------------------------------------------
-# RESULT BOX
-# ---------------------------------------------------------
-if predict_btn:
+if predict:
+    with st.spinner("Menganalisis data pasien..."):
+        time.sleep(1.2)
+
     prediction = logreg.predict(input_scaled)[0]
     proba = logreg.predict_proba(input_scaled)[0][1]
 
+    # Probability Chart
+    fig, ax = plt.subplots(figsize=(5, 1.2))
+    ax.barh(["Stroke Probability"], [proba], color="#d9534f" if prediction == 1 else "#5cb85c")
+    ax.set_xlim([0, 1])
+    st.pyplot(fig)
+
+    # Result Message
     if prediction == 1:
         st.markdown(f"""
         <div class='result-box' style='background-color:#ffdddd; color:#b30000;'>
-        ⚠️ Risiko Stroke Tinggi<br>Probabilitas: {proba:.2f}
+        ⚠️ <b>High Stroke Risk</b><br>Probability: {proba:.2f}
         </div>
         """, unsafe_allow_html=True)
     else:
         st.markdown(f"""
         <div class='result-box' style='background-color:#ddffdd; color:#006600;'>
-        🟢 Risiko Stroke Rendah<br>Probabilitas: {proba:.2f}
+        🟢 <b>Low Stroke Risk</b><br>Probability: {proba:.2f}
         </div>
         """, unsafe_allow_html=True)
+
+# ================================
+# FOOTER
+# ================================
+st.markdown("""
+<div class='footer'>
+Created by <b>Nikmah Azizah</b> • Deep Learning Project • ubharajaya  
+</div>
+""", unsafe_allow_html=True)
 
 st.write("---")
 st.caption("✨ Dikembangkan dengan Logistic Regression untuk Deployment | ANN digunakan untuk penelitian model.")
