@@ -66,11 +66,13 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
-# ================================
+# ---------------------------------------------------------
 # HEADER
-# ================================
-st.markdown("<h1 class='header'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
-st.write("")
+# ---------------------------------------------------------
+st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
+
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # 2-COLUMN INPUT LAYOUT
