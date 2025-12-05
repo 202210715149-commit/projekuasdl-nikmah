@@ -19,54 +19,79 @@ st.set_page_config(
     layout="centered"
 )
 
-# ================================
-# PREMIUM SIDEBAR MENU — INFORMASI STROKE
-# ================================
+# ============================================
+# PREMIUM COLLAPSIBLE SIDEBAR MENU — STROKE INFO
+# ============================================
 with st.sidebar:
     st.markdown("<h2 style='color:#4b79a1;'>ℹ️ Informasi Stroke</h2>", unsafe_allow_html=True)
 
-    st.write("Stroke adalah kondisi darurat medis ketika aliran darah ke otak terhenti, menyebabkan kerusakan jaringan otak dalam hitungan menit.")
+    # 1. Apa Itu Stroke
+    with st.expander("🧠 Apa Itu Stroke?"):
+        st.write("""
+Stroke adalah kondisi darurat medis ketika suplai darah ke otak terputus, 
+mengakibatkan sel-sel otak mati dalam hitungan menit.  
+Jika terlambat ditangani, dapat menyebabkan kelumpuhan, gangguan bicara, bahkan kematian.
+        """)
 
-    st.markdown("### 🧠 Jenis Stroke")
-    st.write("""
-    **1. Ischemic Stroke (85%)**  
-    Terjadi karena penyumbatan pembuluh darah otak.  
-    **2. Hemorrhagic Stroke (15%)**  
-    Disebabkan oleh pecahnya pembuluh darah sehingga terjadi perdarahan di otak.
-    """)
+    # 2. Jenis Stroke
+    with st.expander("🧩 Jenis-Jenis Stroke"):
+        st.write("""
+### **1. Ischemic Stroke (±85% kasus)**
+Terjadi karena penyumbatan pembuluh darah otak oleh gumpalan darah atau plak kolesterol.
 
-    st.markdown("### 🔥 Faktor Risiko Tinggi")
-    st.write("""
-    - Tekanan darah tinggi (Hypertension)  
-    - Penyakit jantung  
-    - Kadar gula darah tinggi (diabetes)  
-    - Merokok  
-    - Obesitas / BMI tinggi  
-    - Usia lanjut  
-    - Kolesterol tinggi  
-    - Kurang aktivitas fisik  
-    - Riwayat keluarga
-    """)
+### **2. Hemorrhagic Stroke**
+Disebabkan oleh pecahnya pembuluh darah, sehingga terjadi pendarahan di otak.
 
-    st.markdown("### 🚨 Gejala Umum (Metode FAST)")
-    st.write("""
-    - **F — Face Drooping:** Wajah menurun pada satu sisi  
-    - **A — Arm Weakness:** Lengan lemah atau mati rasa  
-    - **S — Speech Difficulty:** Bicara pelo atau sulit bicara  
-    - **T — Time to Call Emergency:** Segera hubungi layanan darurat  
-    """)
+### **3. TIA (Transient Ischemic Attack) – “Mini Stroke”**
+Gangguan aliran darah sementara yang menjadi peringatan risiko stroke lebih besar.
+        """)
 
-    st.markdown("### 🛡 Pencegahan Stroke")
-    st.write("""
-    - Kontrol tekanan darah  
-    - Hindari merokok  
-    - Jaga berat badan ideal  
-    - Kurangi garam & gula  
-    - Perbanyak aktivitas fisik  
-    - Pemeriksaan kesehatan rutin  
-    """)
+    # 3. Faktor Risiko Tinggi
+    with st.expander("🔥 Faktor Risiko Tinggi"):
+        st.write("""
+- Hipertensi (tekanan darah tinggi)  
+- Penyakit jantung  
+- Diabetes atau gula darah tinggi  
+- Kebiasaan merokok  
+- Kolesterol tinggi  
+- Obesitas (BMI tinggi)  
+- Gaya hidup kurang aktif  
+- Riwayat keluarga stroke  
+- Usia lanjut  
+        """)
 
-    st.info("💡 *Gunakan menu di atas untuk melihat informasi dan memulai prediksi stroke.*")
+    # 4. Gejala Umum — FAST Method
+    with st.expander("🚨 Gejala Umum Stroke (FAST)"):
+        st.write("""
+**F — Face Drooping:**  
+Wajah turun pada satu sisi, senyum tidak simetris.
+
+**A — Arm Weakness:**  
+Lengan tiba-tiba lemah atau sulit diangkat.
+
+**S — Speech Difficulty:**  
+Sulit berbicara, bicara pelo, atau tidak memahami ucapan.
+
+**T — Time to Call Emergency:**  
+Jika ada gejala FAST, segera hubungi layanan darurat.  
+Waktu = otak.
+        """)
+
+    # 5. Pencegahan Stroke
+    with st.expander("🛡 Pencegahan Stroke"):
+        st.write("""
+- Mengontrol tekanan darah  
+- Mengurangi gula & garam  
+- Menghindari merokok  
+- Menjaga berat badan ideal  
+- Rutin berolahraga  
+- Mengontrol kolesterol  
+- Pola makan sehat  
+- Pemeriksaan kesehatan berkala  
+        """)
+
+    st.markdown("---")
+    st.info("💡 *Gunakan menu di sidebar untuk memahami stroke sebelum melakukan prediksi.*")
 
 # ================================
 # CUSTOM CSS (PREMIUM UI)
