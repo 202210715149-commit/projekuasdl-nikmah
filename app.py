@@ -141,11 +141,6 @@ elif menu == "🛡 Pencegahan Stroke":
 
     Pencegahan jauh lebih mudah daripada mengobati.
     """)
-# 6. Stroke Risk Prediction
-st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
-
-st.markdown("<div class='card'>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
 
@@ -195,6 +190,13 @@ body {
 
 </style>
 """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------
+# HEADER
+# ---------------------------------------------------------
+st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
+
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 
 # ================================
 # SIDEBAR MENU
