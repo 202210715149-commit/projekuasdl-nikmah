@@ -57,6 +57,10 @@ menu = st.sidebar.radio(
     label_visibility="collapsed"
 )
 
+st.sidebar.title("⚙️ Settings")
+st.sidebar.info("Isi data pasien lalu klik **Predict Stroke Risk**")
+st.sidebar.markdown("---")
+st.sidebar.write("Developed by **Nikmah Azizah**")
 # ---------------------------------------------------------
 # KONTEN DINAMIS
 # ---------------------------------------------------------
@@ -66,45 +70,78 @@ st.markdown("<div class='content-card'>", unsafe_allow_html=True)
 if menu == "🧠 Penjelasan Stroke":
     st.markdown("""
     ## 🧠 Apa Itu Stroke?
-    Stroke adalah kondisi ketika aliran darah ke otak terhenti...
+    Stroke adalah kondisi ketika aliran darah ke otak terhenti, sehingga sel otak mulai mati dalam hitungan menit.  
+    Jika tidak segera ditangani, stroke dapat menyebabkan **kelumpuhan**, **gangguan bicara**, **kehilangan memori**, hingga **kematian**.
+
+    Stroke terjadi karena:
+    - Penyumbatan pembuluh darah (ischemic)
+    - Pecahnya pembuluh darah (hemorrhagic)
     """)
 
 # 2. Jenis Stroke
 elif menu == "📌 Jenis Stroke":
     st.markdown("""
     ## 📌 Jenis-Jenis Stroke
-    - Ischemic Stroke  
-    - Hemorrhagic Stroke  
-    - TIA (Mini Stroke)
+    ### **1. Ischemic Stroke — 85% kasus**
+    Terjadi karena pembuluh darah tersumbat oleh gumpalan darah/plak.
+
+    ### **2. Hemorrhagic Stroke**
+    Terjadi karena pecahnya pembuluh darah sehingga terjadi pendarahan di otak.
+
+    ### **3. TIA (Transient Ischemic Attack) — Mini Stroke**
+    Gangguan sementara yang sering menjadi tanda bahaya stroke yang lebih besar.
     """)
 
 # 3. Faktor Risiko Tinggi
 elif menu == "🔥 Faktor Risiko Tinggi":
     st.markdown("""
     ## 🔥 Faktor Risiko Tinggi Stroke
-    - Hipertensi  
-    - Diabetes  
-    - Kolesterol tinggi  
-    - Obesitas  
+    Faktor yang paling meningkatkan risiko stroke antara lain:
+    - Tekanan darah tinggi (Hypertension)
+    - Kolesterol tinggi
+    - Penyakit jantung
+    - Diabetes
+    - Merokok
+    - Obesitas atau BMI tinggi
+    - Kurang aktivitas fisik
+    - Riwayat keluarga stroke
+    - Usia lanjut
+
+    Semakin banyak faktor risiko, semakin besar kemungkinan stroke terjadi. 
     """)    
 
 # 4. Gejala FAST
 elif menu == "🚨 Gejala Umum (FAST)":
     st.markdown("""
     ## 🚨 Gejala Umum Stroke (FAST)
-    F - Face drooping  
-    A - Arm weakness  
-    S - Speech difficulty  
-    T - Time to call emergency  
+    ### **F — Face Drooping**
+    Salah satu sisi wajah turun.
+
+    ### **A — Arm Weakness**
+    Lengan sulit diangkat atau terasa lemah.
+
+    ### **S — Speech Difficulty**
+    Bicara pelo atau tidak jelas.
+
+    ### **T — Time to Call Emergency**
+    Segera cari pertolongan medis!  
+    Waktu = otak. Semakin cepat ditangani, semakin besar peluang selamat.
     """)    
 
 # 5. Pencegahan Stroke
 elif menu == "🛡 Pencegahan Stroke":
     st.markdown("""
     ## 🛡 Pencegahan Stroke
-    - Jaga berat badan  
-    - Kurangi rokok  
-    - Kontrol tekanan darah  
+    - Jaga tekanan darah normal  
+    - Berhenti merokok  
+    - Kurangi gula & garam  
+    - Olahraga rutin  
+    - Jaga berat badan ideal  
+    - Konsumsi makanan sehat  
+    - Kontrol kolesterol & gula darah  
+    - Periksa kesehatan secara berkala  
+
+    Pencegahan jauh lebih mudah daripada mengobati.
     """)    
 
 # ---------------------------------------------------------
