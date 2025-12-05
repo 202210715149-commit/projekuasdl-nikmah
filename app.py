@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import pickle
+import time
+import matplotlib.pyplot as plt
 
 # ---------------------------------------------------------
 # LOAD MODEL & SCALER
@@ -17,35 +19,58 @@ st.set_page_config(
     layout="centered"
 )
 
-# Custom CSS to style the UI
+# ================================
+# CUSTOM CSS (PREMIUM UI)
+# ================================
 st.markdown("""
 <style>
-.main {
-    background-color: #f7f9fc;
+
+body {
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
 }
-.card {
-    padding: 20px;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+.header {
+    font-size: 45px;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(90deg, #4b79a1, #283e51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+.glass-card {
+    background: rgba(255,255,255,0.5);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
 .result-box {
     padding: 20px;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
+
+.footer {
+    text-align:center;
+    margin-top:50px;
+    font-size:13px;
+    color:#666;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------------
+# ================================
 # HEADER
-# ---------------------------------------------------------
-st.markdown("<h1 style='text-align:center;'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Masukkan data pasien untuk memprediksi risiko stroke.</p>", unsafe_allow_html=True)
-
-st.markdown("<div class='card'>", unsafe_allow_html=True)
+# ================================
+st.markdown("<h1 class='header'>🧠 Stroke Risk Prediction</h1>", unsafe_allow_html=True)
+st.write("")
 
 # ---------------------------------------------------------
 # 2-COLUMN INPUT LAYOUT
