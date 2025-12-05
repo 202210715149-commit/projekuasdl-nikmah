@@ -182,10 +182,14 @@ st.sidebar.write("Developed by **Nikmah Azizah**")
 # ---------------------------------------------------------
 # KONTEN DINAMIS
 # ---------------------------------------------------------
+st.markdown("<div class='color-card'>", unsafe_allow_html=True)
 
 # 1. Penjelasan Stroke
 if menu == "🧠 Penjelasan Stroke":
     st.markdown("""
+    <div class='title-badge'>🧠 Apa Itu Stroke?</div>
+
+    <div class='color-text'>
     ## 🧠 Apa Itu Stroke?
     Stroke adalah kondisi darurat medis yang terjadi ketika pasokan darah ke otak terganggu, menyebabkan kematian sel otak karena kekurangan oksigen dan nutrisi. Kondisi ini dapat disebabkan oleh penyumbatan pembuluh darah (stroke iskemik) atau pecahnya pembuluh darah (stroke hemoragik). Gejala stroke dapat bervariasi, seperti kelemahan pada satu sisi tubuh, gangguan bicara, dan sakit kepala hebat.
 
