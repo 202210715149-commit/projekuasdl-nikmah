@@ -11,7 +11,7 @@ scaler = pickle.load(open("scaler.pkl", "rb"))
 # ---------------------------------------------------------
 # STREAMLIT UI
 # ---------------------------------------------------------
-st.title("🧠 Stroke Risk Prediction (Logistic Regression Deployment)")
+st.title("🧠 Stroke Risk Prediction")
 st.write("Masukkan data pasien untuk memprediksi risiko stroke.")
 
 # ---------------------------------------------------------
