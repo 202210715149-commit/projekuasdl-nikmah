@@ -66,6 +66,46 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
+# ============ ABOUT STROKE SECTION (PREMIUM CARD) ============
+st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
+
+st.markdown("""
+### ⚠️ Apa Itu Stroke?
+Stroke adalah kondisi darurat medis ketika aliran darah ke otak terganggu, menyebabkan sel-sel otak mati dalam hitungan menit.  
+Ini dapat menyebabkan **kelumpuhan, gangguan berbicara, kehilangan ingatan**, hingga kematian jika tidak ditangani segera.
+
+### 🧩 Jenis Stroke:
+- **Ischemic Stroke (85% kasus):** Penyumbatan pembuluh darah.
+- **Hemorrhagic Stroke:** Pecahnya pembuluh darah di otak.
+
+### 🔥 Faktor Risiko Tinggi:
+- Tekanan darah tinggi (hypertension)
+- Penyakit jantung
+- Kadar gula darah tinggi
+- Merokok
+- Usia lanjut
+- Obesitas / BMI tinggi  
+- Gaya hidup tidak aktif
+
+### 🚨 Gejala Umum (FAST):
+- **F**ace drooping (wajah menurun)
+- **A**rm weakness (lemah tangan)
+- **S**peech difficulty (sulit bicara)
+- **T**ime to call emergency services
+
+### 🛡 Pencegahan Stroke:
+- Mengontrol tekanan darah  
+- Mengurangi konsumsi gula dan garam  
+- Tidak merokok  
+- Berolahraga teratur  
+- Menjaga berat badan sehat  
+""")
+
+st.markdown("</div>", unsafe_allow_html=True)
+
+st.write("")
+st.write("")
+
 # ---------------------------------------------------------
 # HEADER
 # ---------------------------------------------------------
