@@ -1,0 +1,7 @@
+streamlit
+tensorflow-cpu==2.10.0
+scikit-learn
+numpy
+pandas
+matplotlib
+pickle-mixin
