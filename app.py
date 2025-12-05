@@ -19,6 +19,24 @@ st.set_page_config(
     layout="centered"
 )
 
+# ================================
+# SIDEBAR MENU
+# ================================
+st.sidebar.markdown("<div class='sidebar-title'>📘 Informasi Stroke</div>", unsafe_allow_html=True)
+
+menu = st.sidebar.radio(
+    "Pilih topik penjelasan:",
+    [
+        "🧠 Penjelasan Stroke",
+        "📌 Jenis Stroke",
+        "🔥 Faktor Risiko Tinggi",
+        "🚨 Gejala Umum (FAST)",
+        "🛡 Pencegahan Stroke",
+        "🧠 Stroke Risk Prediction"
+    ],
+    label_visibility="collapsed"
+)
+
 # ============================================
 # PREMIUM COLLAPSIBLE SIDEBAR MENU — STROKE INFO
 # ============================================
