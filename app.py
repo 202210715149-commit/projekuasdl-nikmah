@@ -38,6 +38,7 @@ st.markdown("""
     opacity: 0.8;
     margin-top: -10px;
 }
+st.image("https://cdn.pixabay.com/photo/2018/02/09/10/09/brain-3141249_960_720.jpg", width=350)
 
 /* GLASS CARD */
 .feature-card {
