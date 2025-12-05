@@ -121,11 +121,31 @@ st.markdown("""
     box-shadow: 0 4px 25px rgba(0,0,0,0.08);
 }
 .color-card {
-    background: linear-gradient(135deg, #f7f9fc, #e6efff);
+    background: linear-gradient(135deg, #f7faff, #e5eeff);
     padding: 35px;
     border-radius: 18px;
-    box-shadow: 0px 4px 18px rgba(0,0,0,0.06);
-    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+.title-badge {
+    background: #dce7ff;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    color: #223a5e;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.color-text {
+    color: #364a63;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+ul li {
+    color: #344563;
+    font-size: 17px;
 }
 </style>
 """, unsafe_allow_html=True)
