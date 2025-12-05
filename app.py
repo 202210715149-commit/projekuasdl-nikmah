@@ -10,16 +10,6 @@ import matplotlib.pyplot as plt
 logreg = pickle.load(open("logistic_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
-# ---------------------------------------------------------
-# PAGE CONFIG
-# ---------------------------------------------------------
-st.set_page_config(
-    page_title="Stroke Risk Prediction",
-    page_icon="🧠",
-    layout="centered"
-)
-
-
 # --- CSS untuk Premium UI ---
 st.markdown("""
 <style>
