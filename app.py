@@ -1,85 +1,99 @@
 import streamlit as st
-from streamlit_extras.switch_page_button import switch_page
+import numpy as np
+import pickle
 
-# PAGE CONFIG
-st.set_page_config(
-    page_title="Stroke Prediction Dashboard",
-    page_icon="🧠",
-    layout="centered"
-)
+# ---------------------------------------------------------
+# LOAD MODEL LOGISTIC REGRESSION & SCALER
+# ---------------------------------------------------------
+logreg = pickle.load(open("logistic_model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
 
-# LOAD CUSTOM CSS
-with open("assets/style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# ---------------------------------------------------------
+# STREAMLIT UI
+# ---------------------------------------------------------
+st.title("🧠 Stroke Risk Prediction (Logistic Regression Deployment)")
+st.write("Masukkan data pasien untuk memprediksi risiko stroke.")
 
-# DARK MODE SWITCH
-dark_mode = st.checkbox("🌙 Dark Mode", value=False)
+# ---------------------------------------------------------
+# FORM INPUT
+# ---------------------------------------------------------
+age = st.number_input("Age", min_value=1, max_value=120, value=25)
 
-if dark_mode:
-    st.markdown("<body data-theme='dark'>", unsafe_allow_html=True)
-else:
-    st.markdown("<body data-theme='light'>", unsafe_allow_html=True)
+hypertension = st.selectbox("Hypertension", [0, 1])
+heart_disease = st.selectbox("Heart Disease", [0, 1])
 
-# HEADER WITH PREMIUM GRADIENT
-st.markdown("""
-<h1 class='header' style='text-align:center;'>🧠 Stroke Prediction Dashboard</h1>
-<p style='text-align:center; font-size:17px; opacity:0.8;'>
-AI-powered system to estimate stroke risk based on medical indicators.
-</p>
-""", unsafe_allow_html=True)
+avg_glucose_level = st.number_input("Average Glucose Level", min_value=40.0, max_value=300.0, value=100.0)
+bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=25.0)
 
-st.write("")
+gender = st.selectbox("Gender", ["Female", "Male", "Other"])
+ever_married = st.selectbox("Ever Married", ["No", "Yes"])
+Residence_type = st.selectbox("Residence Type", ["Urban", "Rural"])
+work_type = st.selectbox("Work Type", ["Private", "Self-employed", "Govt_job", "Children", "Never_worked"])
+smoking_status = st.selectbox("Smoking Status", ["never smoked", "formerly smoked", "smokes"])
 
-# ============ ABOUT STROKE SECTION (PREMIUM CARD) ============
-st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
+# ---------------------------------------------------------
+# ONE-HOT ENCODING - SESUAI TRAINING
+# ---------------------------------------------------------
 
-st.markdown("""
-### ⚠️ Apa Itu Stroke?
-Stroke adalah kondisi darurat medis ketika aliran darah ke otak terganggu, menyebabkan sel-sel otak mati dalam hitungan menit.  
-Ini dapat menyebabkan **kelumpuhan, gangguan berbicara, kehilangan ingatan**, hingga kematian jika tidak ditangani segera.
+# Gender (training punya: Male, Other → Female=0 untuk semuanya)
+gender_male = 1 if gender == "Male" else 0
+gender_other = 1 if gender == "Other" else 0
 
-### 🧩 Jenis Stroke:
-- **Ischemic Stroke (85% kasus):** Penyumbatan pembuluh darah.
-- **Hemorrhagic Stroke:** Pecahnya pembuluh darah di otak.
+# Ever Married
+ever_married_yes = 1 if ever_married == "Yes" else 0
 
-### 🔥 Faktor Risiko Tinggi:
-- Tekanan darah tinggi (hypertension)
-- Penyakit jantung
-- Kadar gula darah tinggi
-- Merokok
-- Usia lanjut
-- Obesitas / BMI tinggi  
-- Gaya hidup tidak aktif
+# Residence
+Residence_urban = 1 if Residence_type == "Urban" else 0
 
-### 🚨 Gejala Umum (FAST):
-- **F**ace drooping (wajah menurun)
-- **A**rm weakness (lemah tangan)
-- **S**peech difficulty (sulit bicara)
-- **T**ime to call emergency services
+# Work Type (training punya 4 kolom)
+work_Never = 1 if work_type == "Never_worked" else 0
+work_Private = 1 if work_type == "Private" else 0
+work_Self = 1 if work_type == "Self-employed" else 0
+work_children = 1 if work_type == "Children" else 0
+# Govt_job tidak perlu encoding karena drop_first=True di training
 
-### 🛡 Pencegahan Stroke:
-- Mengontrol tekanan darah  
-- Mengurangi konsumsi gula dan garam  
-- Tidak merokok  
-- Berolahraga teratur  
-- Menjaga berat badan sehat  
-""")
+# Smoking Status
+smoke_former = 1 if smoking_status == "formerly smoked" else 0
+smoke_never = 1 if smoking_status == "never smoked" else 0
+smoke_smokes = 1 if smoking_status == "smokes" else 0
 
-st.markdown("</div>", unsafe_allow_html=True)
+# ---------------------------------------------------------
+# SUSUN INPUT MODEL (PENTING!!! Sesuai urutan training)
+# ---------------------------------------------------------
 
-st.write("")
-st.write("")
+input_data = np.array([[
+    age,
+    hypertension,
+    heart_disease,
+    avg_glucose_level,
+    bmi,
+    gender_male,
+    gender_other,
+    ever_married_yes,
+    work_Never,
+    work_Private,
+    work_Self,
+    work_children,
+    Residence_urban,
+    smoke_former,
+    smoke_never,
+    smoke_smokes
+]])
 
-# =========== MAIN CALL TO ACTION BUTTON ============
-st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
-if st.button("🚀 Mulai Prediksi Risiko Stroke", use_container_width=True):
-    switch_page("Predict_Stroke")
-st.markdown("</div>", unsafe_allow_html=True)
+# Scaling
+input_scaled = scaler.transform(input_data)
 
-# FOOTER
-st.markdown("""
-<br><br>
-<p class='footer'>
-Created by <b>Nikmah Azizah</b> • Deep Learning Project • UB Harajaya  
-</p>
-""", unsafe_allow_html=True)
+# ---------------------------------------------------------
+# PREDICTION
+# ---------------------------------------------------------
+if st.button("Predict Stroke Risk"):
+    prediction = logreg.predict(input_scaled)[0]
+    proba = logreg.predict_proba(input_scaled)[0][1]
+
+    if prediction == 1:
+        st.error(f"⚠️ Risiko Stroke Tinggi (Probabilitas: {proba:.2f})")
+    else:
+        st.success(f"🟢 Risiko Stroke Rendah (Probabilitas: {proba:.2f})")
+
+st.write("---")
+st.caption("Model Logistic Regression | Training menggunakan ANN & Logistic Regression")
