@@ -20,6 +20,55 @@ st.set_page_config(
 )
 
 # ================================
+# PREMIUM SIDEBAR MENU — INFORMASI STROKE
+# ================================
+with st.sidebar:
+    st.markdown("<h2 style='color:#4b79a1;'>ℹ️ Informasi Stroke</h2>", unsafe_allow_html=True)
+
+    st.write("Stroke adalah kondisi darurat medis ketika aliran darah ke otak terhenti, menyebabkan kerusakan jaringan otak dalam hitungan menit.")
+
+    st.markdown("### 🧠 Jenis Stroke")
+    st.write("""
+    **1. Ischemic Stroke (85%)**  
+    Terjadi karena penyumbatan pembuluh darah otak.  
+    **2. Hemorrhagic Stroke (15%)**  
+    Disebabkan oleh pecahnya pembuluh darah sehingga terjadi perdarahan di otak.
+    """)
+
+    st.markdown("### 🔥 Faktor Risiko Tinggi")
+    st.write("""
+    - Tekanan darah tinggi (Hypertension)  
+    - Penyakit jantung  
+    - Kadar gula darah tinggi (diabetes)  
+    - Merokok  
+    - Obesitas / BMI tinggi  
+    - Usia lanjut  
+    - Kolesterol tinggi  
+    - Kurang aktivitas fisik  
+    - Riwayat keluarga
+    """)
+
+    st.markdown("### 🚨 Gejala Umum (Metode FAST)")
+    st.write("""
+    - **F — Face Drooping:** Wajah menurun pada satu sisi  
+    - **A — Arm Weakness:** Lengan lemah atau mati rasa  
+    - **S — Speech Difficulty:** Bicara pelo atau sulit bicara  
+    - **T — Time to Call Emergency:** Segera hubungi layanan darurat  
+    """)
+
+    st.markdown("### 🛡 Pencegahan Stroke")
+    st.write("""
+    - Kontrol tekanan darah  
+    - Hindari merokok  
+    - Jaga berat badan ideal  
+    - Kurangi garam & gula  
+    - Perbanyak aktivitas fisik  
+    - Pemeriksaan kesehatan rutin  
+    """)
+
+    st.info("💡 *Gunakan menu di atas untuk melihat informasi dan memulai prediksi stroke.*")
+
+# ================================
 # CUSTOM CSS (PREMIUM UI)
 # ================================
 st.markdown("""
