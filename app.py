@@ -120,6 +120,13 @@ st.markdown("""
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 25px rgba(0,0,0,0.08);
 }
+.color-card {
+    background: linear-gradient(135deg, #f7f9fc, #e6efff);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.06);
+    margin-top: 25px;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -154,7 +161,7 @@ st.sidebar.write("Developed by **Nikmah Azizah**")
 if menu == "🧠 Penjelasan Stroke":
     st.markdown("""
     ## 🧠 Apa Itu Stroke?
-    kondisi darurat medis yang terjadi ketika pasokan darah ke otak terganggu, menyebabkan kematian sel otak karena kekurangan oksigen dan nutrisi. Kondisi ini dapat disebabkan oleh penyumbatan pembuluh darah (stroke iskemik) atau pecahnya pembuluh darah (stroke hemoragik). Gejala stroke dapat bervariasi, seperti kelemahan pada satu sisi tubuh, gangguan bicara, dan sakit kepala hebat.
+    Stroke adalah kondisi darurat medis yang terjadi ketika pasokan darah ke otak terganggu, menyebabkan kematian sel otak karena kekurangan oksigen dan nutrisi. Kondisi ini dapat disebabkan oleh penyumbatan pembuluh darah (stroke iskemik) atau pecahnya pembuluh darah (stroke hemoragik). Gejala stroke dapat bervariasi, seperti kelemahan pada satu sisi tubuh, gangguan bicara, dan sakit kepala hebat.
 
     Stroke terjadi karena:
     - Penyumbatan pembuluh darah (ischemic)
