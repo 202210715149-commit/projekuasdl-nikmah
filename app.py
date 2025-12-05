@@ -36,6 +36,14 @@ st.markdown("""
     font-weight: 700;
     color: #4b79a1;
 }
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align:center;
+    font-size:13px;
+    color:#666;
+}
 </style>
 """, unsafe_allow_html=True)
 
