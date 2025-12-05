@@ -19,6 +19,72 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown("""
+<style>
+/* HERO TITLE */
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    background: linear-gradient(90deg, #4b79a1, #283e51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.8;
+    margin-top: -10px;
+}
+
+/* GLASS CARD */
+.feature-card {
+    background: rgba(255,255,255,0.55);
+    padding: 25px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+}
+
+/* CTA BUTTON */
+.cta-button {
+    background: linear-gradient(90deg, #4b79a1, #283e51);
+    padding: 14px 35px;
+    border-radius: 30px;
+    color: white !important;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 280px;
+    margin: auto;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 50px;
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # ---------------------------------------------------------
 # CSS
 # ---------------------------------------------------------
