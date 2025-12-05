@@ -37,6 +37,7 @@ st.markdown("""
     color: #4b79a1;
 }
 .footer {
+    position: fixed;
     bottom: 10px;
     width: 100%;
     text-align:center;
