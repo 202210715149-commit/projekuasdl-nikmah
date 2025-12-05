@@ -181,6 +181,6 @@ if predict:
 # ================================
 st.markdown("""
 <div class='footer'>
-Created by <b>Nikmah Azizah</b> • Deep Learning Project • UB Harajaya  
+Created by <b>Nikmah Azizah</b> • Deep Learning Project • Ubharajaya  
 </div>
 """, unsafe_allow_html=True)
