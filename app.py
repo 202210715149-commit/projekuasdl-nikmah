@@ -97,11 +97,13 @@ st.markdown("""
     backdrop-filter: blur(10px);
     box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
 }
+
 .sidebar-title {
     font-size: 22px;
     font-weight: 700;
     color: #4b79a1;
 }
+
 .footer {
     position: fixed;
     bottom: 10px;
@@ -110,6 +112,7 @@ st.markdown("""
     font-size:13px;
     color:#666;
 }
+
 .main-container {
     max-width: 1000px;
     margin: auto;
@@ -120,6 +123,7 @@ st.markdown("""
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 25px rgba(0,0,0,0.08);
 }
+
 .color-card {
     background: linear-gradient(135deg, #f7faff, #e5eeff);
     padding: 35px;
@@ -127,6 +131,7 @@ st.markdown("""
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-top: 20px;
 }
+
 .title-badge {
     background: #dce7ff;
     padding: 12px 22px;
@@ -137,6 +142,7 @@ st.markdown("""
     display: inline-block;
     margin-bottom: 20px;
 }
+
 .color-text {
     color: #364a63;
     font-size: 17px;
